@@ -81,13 +81,14 @@ export default async function PublicPage({ params }: Props) {
 
         {/* Liens */}
         <PublicLinks links={links} cardClass={theme.card} />
-
-        <p className={`mt-10 text-center text-xs ${theme.accent}`}>
-          <a href="/" target="_blank" className="underline">
-            Créé avec MyBuisness
-          </a>
-        </p>
       </div>
+
+      {/* Signature épinglée tout en bas de la page */}
+      <p className={`mt-auto pt-10 text-center text-xs ${theme.accent}`}>
+        <a href="/" target="_blank" className="underline">
+          Créé avec MyBuisness
+        </a>
+      </p>
     </main>
   );
 }
