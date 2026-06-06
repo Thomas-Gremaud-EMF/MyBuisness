@@ -55,7 +55,7 @@ export default async function PublicPage({ params }: Props) {
   const theme = THEMES[profile.theme] ?? THEMES.minimal;
 
   return (
-    <main className={`flex min-h-full flex-col items-center ${theme.page} px-5 py-12`}>
+    <main className={`flex min-h-dvh flex-col items-center ${theme.page} px-5 py-12`}>
       <div className="w-full max-w-md">
         {/* En-tête du profil */}
         <div className="flex flex-col items-center text-center">
