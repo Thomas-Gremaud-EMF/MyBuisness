@@ -7,6 +7,11 @@ import Avatar from "@/components/Avatar";
 import PublicLinks from "./PublicLinks";
 import ContactBar from "./ContactBar";
 
+// Toujours rendre la page fraîche (jamais de cache) : les visiteurs voient
+// les derniers liens à jour, et le navigateur intégré d'Instagram est forcé
+// de recharger la page plutôt que d'afficher une vieille version.
+export const dynamic = "force-dynamic";
+
 type Props = { params: Promise<{ username: string }> };
 
 async function getData(username: string) {
