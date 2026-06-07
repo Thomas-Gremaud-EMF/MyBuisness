@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const name = data.profile.display_name || data.profile.username;
   return {
-    title: `${name} · MyBuisness`,
+    title: `${name} · MyBusiness`,
     description: data.profile.bio ?? `Retrouve tous les liens de ${name}.`,
   };
 }
@@ -86,7 +86,7 @@ export default async function PublicPage({ params }: Props) {
       {/* Signature épinglée tout en bas de la page */}
       <p className={`mt-auto pt-10 text-center text-xs ${theme.accent}`}>
         <a href="/" target="_blank" className="underline">
-          Créé avec MyBuisness
+          Créé avec MyBusiness
         </a>
       </p>
     </main>

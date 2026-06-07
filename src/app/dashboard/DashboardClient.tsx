@@ -26,6 +26,7 @@ export default function DashboardClient({
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("liens");
   const [links, setLinks] = useState(initialLinks);
+  const [copied, setCopied] = useState(false);
   const [, startTransition] = useTransition();
 
   const publicUrl =
@@ -37,35 +38,52 @@ export default function DashboardClient({
     startTransition(() => router.refresh());
   }
 
+  function copyLink() {
+    navigator.clipboard.writeText(publicUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
     <div className="flex flex-1 flex-col bg-gray-50">
       {/* En-tête */}
-      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white px-5 py-3">
-        <span className="font-bold">
-          My<span className="text-indigo-600">Buisness</span>
-        </span>
-        <div className="flex items-center gap-2 text-sm">
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText(publicUrl);
-            }}
-            className="rounded-full border border-gray-300 px-3 py-1.5 hover:border-gray-900"
-            title={publicUrl}
-          >
-            🔗 Copier mon lien
-          </button>
-          <a
-            href={`/${profile.username}`}
-            target="_blank"
-            className="rounded-full bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-700"
-          >
-            Voir ma page ↗
-          </a>
-          <form action="/auth/signout" method="post">
-            <button className="rounded-full px-3 py-1.5 text-gray-500 hover:text-gray-900">
-              Déconnexion
+      <header className="sticky top-0 z-10 border-b border-gray-200 bg-white">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-4 py-3">
+          <span className="text-lg font-bold">
+            My<span className="text-indigo-600">Business</span>
+          </span>
+          <div className="flex items-center gap-1.5 text-sm">
+            <button
+              onClick={copyLink}
+              className="rounded-full border border-gray-300 px-3 py-1.5 hover:border-gray-900"
+              title={publicUrl}
+            >
+              {copied ? (
+                "✓ Copié"
+              ) : (
+                <>
+                  🔗<span className="hidden sm:inline"> Copier mon lien</span>
+                </>
+              )}
             </button>
-          </form>
+            <a
+              href={`/${profile.username}`}
+              target="_blank"
+              className="rounded-full bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-700"
+            >
+              <span className="sm:hidden">Voir ↗</span>
+              <span className="hidden sm:inline">Voir ma page ↗</span>
+            </a>
+            <form action="/auth/signout" method="post">
+              <button
+                className="rounded-full px-3 py-1.5 text-gray-500 hover:text-gray-900"
+                title="Déconnexion"
+              >
+                <span className="sm:hidden">Sortir</span>
+                <span className="hidden sm:inline">Déconnexion</span>
+              </button>
+            </form>
+          </div>
         </div>
       </header>
 

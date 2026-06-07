@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MyBuisness — Tous tes liens business en un seul endroit",
+  title: "MyBusiness — Tous tes liens business en un seul endroit",
   description:
     "Crée ta page de liens professionnelle : réseaux, contact, prise de rendez-vous et produits. Partage un seul lien depuis ta bio.",
 };

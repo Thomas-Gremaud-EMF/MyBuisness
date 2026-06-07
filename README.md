@@ -1,4 +1,4 @@
-# MyBuisness
+# MyBusiness
 
 Une plateforme de "page de liens" (style Linktree/MyLinks) orientée business :
 contact direct (WhatsApp, appel, email, prise de rendez-vous), thèmes pro,

@@ -12,7 +12,7 @@ export default async function Home() {
       {/* Barre de navigation */}
       <header className="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto w-full">
         <span className="text-xl font-bold tracking-tight">
-          My<span className="text-indigo-600">Buisness</span>
+          My<span className="text-indigo-600">Business</span>
         </span>
         <nav className="flex items-center gap-3 text-sm">
           {user ? (
@@ -93,7 +93,7 @@ export default async function Home() {
       </section>
 
       <footer className="border-t border-gray-100 py-6 text-center text-sm text-gray-400">
-        MyBuisness — créé avec ❤️
+        MyBusiness — créé avec ❤️
       </footer>
     </main>
   );
