@@ -50,7 +50,7 @@ export default function DashboardClient({
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-4 py-3">
           <span className="text-lg font-bold">
-            My<span className="text-indigo-600">Business</span>
+            Busy<span className="text-indigo-600">Link</span>
           </span>
           <div className="flex items-center gap-1.5 text-sm">
             <button

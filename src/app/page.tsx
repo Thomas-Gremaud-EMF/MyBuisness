@@ -12,7 +12,7 @@ export default async function Home() {
       {/* Barre de navigation */}
       <header className="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto w-full">
         <span className="text-xl font-bold tracking-tight">
-          My<span className="text-indigo-600">Business</span>
+          Busy<span className="text-indigo-600">Link</span>
         </span>
         <nav className="flex items-center gap-3 text-sm">
           {user ? (
@@ -46,9 +46,12 @@ export default async function Home() {
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
           Un seul lien pour
           <br />
-          tout ton <span className="text-indigo-600">business</span>.
+          les gens qui <span className="text-indigo-600">bossent</span>.
         </h1>
-        <p className="mt-6 text-lg text-gray-600 max-w-xl">
+        <p className="mt-4 text-base font-medium uppercase tracking-wide text-indigo-600">
+          Stay busy. Share one link.
+        </p>
+        <p className="mt-5 text-lg text-gray-600 max-w-xl">
           Regroupe tes réseaux, ton contact WhatsApp, ta prise de rendez-vous et
           tes produits sur une page pro. Partage-la depuis ta bio Instagram,
           TikTok ou LinkedIn.
@@ -93,7 +96,7 @@ export default async function Home() {
       </section>
 
       <footer className="border-t border-gray-100 py-6 text-center text-sm text-gray-400">
-        MyBusiness — créé avec ❤️
+        BusyLink — Stay busy. Share one link. ❤️
       </footer>
     </main>
   );

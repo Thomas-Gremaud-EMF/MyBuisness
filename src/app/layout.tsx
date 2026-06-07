@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MyBusiness — Tous tes liens business en un seul endroit",
+  title: "BusyLink — Un seul lien pour les gens qui bossent",
   description:
-    "Crée ta page de liens professionnelle : réseaux, contact, prise de rendez-vous et produits. Partage un seul lien depuis ta bio.",
+    "Stay busy. Share one link. Crée ta page de liens pro : réseaux, contact, prise de rendez-vous et produits. Un seul lien à partager depuis ta bio.",
 };
 
 export default function RootLayout({

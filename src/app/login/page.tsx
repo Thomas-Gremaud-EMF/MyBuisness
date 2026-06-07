@@ -39,7 +39,7 @@ export default function LoginPage() {
     <div className="flex flex-1 items-center justify-center bg-gray-50 px-6 py-12">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
         <Link href="/" className="text-lg font-bold">
-          My<span className="text-indigo-600">Business</span>
+          Busy<span className="text-indigo-600">Link</span>
         </Link>
         <h1 className="mt-6 text-2xl font-bold">Bon retour 👋</h1>
         <p className="mt-1 text-sm text-gray-500">Connecte-toi à ton espace.</p>
