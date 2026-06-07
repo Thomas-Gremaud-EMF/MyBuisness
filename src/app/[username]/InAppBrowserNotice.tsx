@@ -1,5 +1,9 @@
 "use client";
 
+/* La détection du navigateur (via navigator.userAgent) ne peut se faire qu'au
+   montage côté client, donc le setState dans l'effet est volontaire ici. */
+/* eslint-disable react-hooks/set-state-in-effect */
+
 import { useEffect, useState } from "react";
 
 /**
