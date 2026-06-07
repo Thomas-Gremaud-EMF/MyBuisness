@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { Profile, Link as LinkType } from "@/lib/types";
 import { THEMES } from "@/lib/types";
 import Avatar from "@/components/Avatar";
+import LogoMark from "@/components/LogoMark";
 import AvatarUpload from "./AvatarUpload";
 import {
   addLink,
@@ -49,8 +50,11 @@ export default function DashboardClient({
       {/* En-tête */}
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-4 py-3">
-          <span className="text-lg font-bold">
-            Busy<span className="text-indigo-600">Link</span>
+          <span className="flex items-center gap-2 text-lg font-bold">
+            <LogoMark className="h-7 w-7" />
+            <span className="hidden sm:inline">
+              Busy<span className="text-indigo-600">Link</span>
+            </span>
           </span>
           <div className="flex items-center gap-1.5 text-sm">
             <button

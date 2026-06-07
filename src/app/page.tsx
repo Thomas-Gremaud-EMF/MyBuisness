@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import LogoMark from "@/components/LogoMark";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -11,8 +12,11 @@ export default async function Home() {
     <main className="flex flex-col min-h-full bg-white text-gray-900">
       {/* Barre de navigation */}
       <header className="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto w-full">
-        <span className="text-xl font-bold tracking-tight">
-          Busy<span className="text-indigo-600">Link</span>
+        <span className="flex items-center gap-2 text-xl font-bold tracking-tight">
+          <LogoMark className="h-8 w-8" />
+          <span>
+            Busy<span className="text-indigo-600">Link</span>
+          </span>
         </span>
         <nav className="flex items-center gap-3 text-sm">
           {user ? (

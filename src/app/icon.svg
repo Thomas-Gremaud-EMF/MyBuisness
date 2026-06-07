@@ -1,12 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6366F1" />
-      <stop offset="1" stop-color="#4F46E5" />
+      <stop offset="0" stop-color="#7B79FF" />
+      <stop offset="0.55" stop-color="#5B53F0" />
+      <stop offset="1" stop-color="#4338CA" />
     </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28" />
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="weave" clipPathUnits="userSpaceOnUse">
+      <rect x="43" y="51" width="16" height="20" />
+    </clipPath>
   </defs>
-  <rect width="100" height="100" rx="26" fill="url(#bg)" />
-  <text x="50" y="54" text-anchor="middle" dominant-baseline="central"
-        font-family="Arial, Helvetica, sans-serif" font-weight="800"
-        font-size="66" fill="#ffffff">B</text>
+
+  <!-- Carré arrondi premium + reflet -->
+  <rect width="100" height="100" rx="28" fill="url(#bg)" />
+  <rect width="100" height="100" rx="28" fill="url(#gloss)" />
+
+  <!-- Symbole : deux maillons entrelacés -->
+  <g transform="rotate(-45 50 50)" fill="none" stroke="#ffffff" stroke-width="11" stroke-linejoin="round">
+    <rect id="lb" x="42" y="37" width="38" height="26" rx="13" />
+    <rect id="la" x="20" y="37" width="38" height="26" rx="13" />
+    <use href="#lb" clip-path="url(#weave)" />
+  </g>
 </svg>

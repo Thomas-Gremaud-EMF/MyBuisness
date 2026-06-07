@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import LogoMark from "@/components/LogoMark";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -38,8 +39,11 @@ export default function LoginPage() {
   return (
     <div className="flex flex-1 items-center justify-center bg-gray-50 px-6 py-12">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
-        <Link href="/" className="text-lg font-bold">
-          Busy<span className="text-indigo-600">Link</span>
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+          <LogoMark className="h-7 w-7" />
+          <span>
+            Busy<span className="text-indigo-600">Link</span>
+          </span>
         </Link>
         <h1 className="mt-6 text-2xl font-bold">Bon retour 👋</h1>
         <p className="mt-1 text-sm text-gray-500">Connecte-toi à ton espace.</p>
