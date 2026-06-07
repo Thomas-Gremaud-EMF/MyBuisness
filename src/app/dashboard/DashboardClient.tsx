@@ -45,7 +45,7 @@ export default function DashboardClient({
   }
 
   return (
-    <div className="flex flex-1 flex-col bg-gray-50">
+    <div className="flex flex-1 flex-col overflow-x-hidden bg-gray-50">
       {/* En-tête */}
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-2 px-4 py-3">
@@ -89,7 +89,7 @@ export default function DashboardClient({
 
       <div className="mx-auto grid w-full max-w-5xl flex-1 gap-8 px-5 py-8 lg:grid-cols-[1fr_360px]">
         {/* Colonne d'édition */}
-        <div>
+        <div className="min-w-0">
           {/* Onglets */}
           <div className="mb-6 flex gap-1 rounded-full bg-gray-100 p-1 text-sm font-medium">
             {(["liens", "apparence", "contact"] as Tab[]).map((t) => (

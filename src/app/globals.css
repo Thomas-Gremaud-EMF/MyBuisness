@@ -17,3 +17,14 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Empêche iOS de zoomer automatiquement quand on tape dans un champ.
+   (Safari mobile zoome dès que la police d'un champ fait moins de 16px.) */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+

@@ -89,32 +89,32 @@ export default function SignupPage() {
             <label className="block text-sm font-medium mb-1">
               Nom d&apos;utilisateur (ton lien)
             </label>
-            <div className="flex items-center rounded-lg border border-gray-300 focus-within:border-indigo-500 overflow-hidden">
-              <span className="px-3 text-sm text-gray-400 select-none">
+            <label className="flex cursor-text items-center rounded-lg border border-gray-300 focus-within:border-indigo-500 overflow-hidden">
+              <span className="pl-3 text-sm text-gray-400 select-none">
                 busylink.app/
               </span>
               <input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="thomas"
-                className="flex-1 py-2 pr-3 outline-none text-sm"
+                placeholder="leo-coaching"
+                className="flex-1 px-1 py-2 pr-3 outline-none text-sm"
                 required
               />
-            </div>
+            </label>
           </div>
 
           <Field
             label="Nom affiché (ton nom ou ta marque)"
             value={displayName}
             onChange={setDisplayName}
-            placeholder="Thomas Gremaud"
+            placeholder="Léo Coaching"
           />
           <Field
             label="Email"
             type="email"
             value={email}
             onChange={setEmail}
-            placeholder="toi@exemple.com"
+            placeholder="leo@exemple.com"
             required
           />
           <Field
