@@ -6,6 +6,7 @@ import { THEMES } from "@/lib/types";
 import Avatar from "@/components/Avatar";
 import PublicLinks from "./PublicLinks";
 import ContactBar from "./ContactBar";
+import InAppBrowserNotice from "./InAppBrowserNotice";
 
 // Toujours rendre la page fraîche (jamais de cache) : les visiteurs voient
 // les derniers liens à jour, et le navigateur intégré d'Instagram est forcé
@@ -57,6 +58,9 @@ export default async function PublicPage({ params }: Props) {
   return (
     <main className={`flex min-h-dvh flex-col items-center ${theme.page} px-5 py-12`}>
       <div className="w-full max-w-md">
+        {/* Bannière "ouvrir dans le navigateur" (seulement dans les apps) */}
+        <InAppBrowserNotice />
+
         {/* En-tête du profil */}
         <div className="flex flex-col items-center text-center">
           <Avatar
