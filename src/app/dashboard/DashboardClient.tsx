@@ -193,7 +193,7 @@ function LinksTab({
           placeholder="https://..."
           type="url"
           inputMode="url"
-          autoComplete="off"
+          autoComplete="url"
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
@@ -308,7 +308,7 @@ function LinkRow({
                 placeholder="https://..."
                 type="url"
                 inputMode="url"
-                autoComplete="off"
+                autoComplete="url"
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
@@ -511,7 +511,7 @@ function ContactTab({
             onChange={(e) => set(r.key, e.target.value)}
             placeholder={r.placeholder}
             inputMode={r.mode}
-            autoComplete="off"
+            autoComplete={r.mode}
             autoCorrect="off"
             autoCapitalize={r.mode === "tel" ? undefined : "none"}
             spellCheck={false}
