@@ -46,7 +46,7 @@ export default async function Home() {
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
           Un seul lien pour
           <br />
-          les gens qui <span className="text-indigo-600">bossent</span>.
+          les gens qui <span className="text-indigo-600">entreprennent</span>.
         </h1>
         <p className="mt-4 text-base font-medium uppercase tracking-wide text-indigo-600">
           Stay busy. Share one link.
