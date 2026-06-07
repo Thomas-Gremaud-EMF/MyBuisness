@@ -182,12 +182,23 @@ function LinksTab({
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Titre (ex: Mon site, Instagram, Réserver un appel)"
+          autoComplete="off"
+          data-1p-ignore
+          data-lpignore="true"
           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-indigo-500"
         />
         <input
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="https://..."
+          type="url"
+          inputMode="url"
+          autoComplete="off"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          data-1p-ignore
+          data-lpignore="true"
           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-indigo-500"
         />
         <button
@@ -286,12 +297,23 @@ function LinkRow({
               <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                autoComplete="off"
+                data-1p-ignore
+                data-lpignore="true"
                 className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm outline-none focus:border-indigo-500"
               />
               <input
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://..."
+                type="url"
+                inputMode="url"
+                autoComplete="off"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck={false}
+                data-1p-ignore
+                data-lpignore="true"
                 className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm outline-none focus:border-indigo-500"
               />
             </div>
@@ -384,6 +406,9 @@ function AppearanceTab({
         <input
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
+          autoComplete="off"
+          data-1p-ignore
+          data-lpignore="true"
           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-indigo-500"
         />
       </div>
@@ -460,14 +485,18 @@ function ContactTab({
     setTimeout(() => setSaved(false), 2000);
   }
 
-  const rows: { key: keyof typeof fields; label: string; placeholder: string }[] =
-    [
-      { key: "whatsapp", label: "WhatsApp (numéro international)", placeholder: "+33612345678" },
-      { key: "phone", label: "Téléphone", placeholder: "+33612345678" },
-      { key: "email", label: "Email de contact", placeholder: "contact@exemple.com" },
-      { key: "booking_url", label: "Lien de prise de rendez-vous", placeholder: "https://calendly.com/..." },
-      { key: "website", label: "Site web", placeholder: "https://monsite.com" },
-    ];
+  const rows: {
+    key: keyof typeof fields;
+    label: string;
+    placeholder: string;
+    mode: "tel" | "email" | "url";
+  }[] = [
+    { key: "whatsapp", label: "WhatsApp (numéro international)", placeholder: "+33612345678", mode: "tel" },
+    { key: "phone", label: "Téléphone", placeholder: "+33612345678", mode: "tel" },
+    { key: "email", label: "Email de contact", placeholder: "contact@exemple.com", mode: "email" },
+    { key: "booking_url", label: "Lien de prise de rendez-vous", placeholder: "https://calendly.com/...", mode: "url" },
+    { key: "website", label: "Site web", placeholder: "https://monsite.com", mode: "url" },
+  ];
 
   return (
     <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-5">
@@ -481,6 +510,13 @@ function ContactTab({
             value={fields[r.key]}
             onChange={(e) => set(r.key, e.target.value)}
             placeholder={r.placeholder}
+            inputMode={r.mode}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize={r.mode === "tel" ? undefined : "none"}
+            spellCheck={false}
+            data-1p-ignore
+            data-lpignore="true"
             className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none focus:border-indigo-500"
           />
         </div>
